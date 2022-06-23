@@ -49,54 +49,34 @@
 <body>
     <!-- ======= Header ======= -->
     <header id="header" class="fixed-top">
-        <div class="container d-flex align-items-center">
-            <a href="websiteEdu/mainPage"><img src="http://localhost/adminqledu/mvc/websiteEdu/assets/img/logo-head.png"
+        <div class="container d-flex align-items-center justify-content-between">
+            <div>
+             <a href="websiteEdu/mainPage"><img src="http://localhost/adminqledu/mvc/websiteEdu/assets/img/thaibinhlogo.png"
                     alt="academyhcm"></img></a>
-            <a href="websiteEdu/mainPage"><span class="logan"> The Foundation Of Knowledge</span></a>
-            <!-- Uncomment below if you prefer to use an image logo -->
-            <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+                <a href="websiteEdu/mainPage"><span class="logan"> Thai Binh Sports</span></a>
+            </div>
 
-            <nav id="navbar" class="navbar order-last order-lg-0">
+            <nav id="navbar"  class="navbar order-last order-lg-0">
                 <ul>
                     <li><a class="active" href="websiteEdu/mainPage">Trang chủ</a></li>
                     <li><a href="websiteEdu/aboutPage">Giới thiệu</a></li>
                     <li><a href="websiteEdu/soursePage">Khóa Học</a></li>
-                    <li><a href="websiteEdu/trainers">Đội ngũ giáo viên</a></li>
-                    <!-- <li><a href="events.html">Mới nhất</a></li> -->
-                    <!-- <li><a href="pricing.html"></a></li> -->
-
-                    <li class="dropdown">
-                        <a href="#"><span>Tin Tức</span> <i class="bi bi-chevron-down"></i></a>
-                        <ul>
-                            <li><a href="#">Khoa Học công nghệ</a></li>
-                            <li class="dropdown">
-                                <a href="#"><span>lập trình ứng dụng</span>
-                                    <i class="bi bi-chevron-right"></i></a>
-                                <!-- <ul>
-                    <li><a href="#">Deep Drop Down 1</a></li>
-                    <li><a href="#">Deep Drop Down 2</a></li>
-                    <li><a href="#">Deep Drop Down 3</a></li>
-                    <li><a href="#">Deep Drop Down 4</a></li>
-                    <li><a href="#">Deep Drop Down 5</a></li>
-                  </ul> -->
-                            </li>
-                            <li><a href="#">Định hướng nghề nghiệp</a></li>
-                            <li><a href="#">Thông Tư Biểu mẫu</a></li>
-                        </ul>
-                    </li>
+                    <li><a href="websiteEdu/trainers">Huấn luyện viên</a></li>
                     <li><a href="websiteEdu/contactPage">Liên hệ</a></li>
                 </ul>
-                <i class="bi bi-list mobile-nav-toggle"></i>
+                <!-- <i class="bi bi-list mobile-nav-toggle"></i> -->
             </nav>
-            <!-- .navbar -->
-            <a href="websiteEdu/contactPage" class="get-started-btn">Đăng ký ngay</a>
-            <a href="Home/loginPage" class="dangnhap">Login</a>
+
+            <div>
+            <a href="websiteEdu/contactPage" class="get-started-btn">Đăng ký</a>
+            <a href="Home/loginPage" class="dangnhap ">Đăng nhập</a>
+            </div>
         </div>
     </header>
     <!-- End Header -->
     <section id="hero" class="d-flex justify-content-center align-items-center">
         <div class="container position-relative" data-aos="zoom-in" data-aos-delay="100">
-            <h1 style="text-align: center;">Đào tạo Lập Trình Viên chuyên nghiệp</h1></br>
-            <h2 style="text-align: center;">The Foundation Of Knowledge</h2>
+            <h1 style="text-align: center; text-transform: uppercase;">Kết nối tinh thần thượng võ</h1></br>
+            <h2 style="text-align: center;">Thai Binh Sports</h2>
         </div>
     </section>

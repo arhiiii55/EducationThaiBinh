@@ -13,8 +13,16 @@
         <div class="container" data-aos="fade-up">
 
             <div class="row" data-aos="zoom-in" data-aos-delay="100">
+                
                 <?php
                 $i = 1;
+                $testrow = mysqli_num_rows($data["getEdu_byid"]) ;
+                if ($testrow == 0){
+                    ?>
+                    <h1 style="text-align: center;">Hiện chưa khai giảng khóa học</h1>
+                    <?php
+                }
+                else {
                 while ($row = mysqli_fetch_assoc($data["getEdu_byid"])) {
                 ?>
                 <div class="col-lg-4 col-md-6 d-flex align-items-stretch course-chance">
@@ -25,7 +33,7 @@
                             <div class="d-flex justify-content-between align-items-center mb-3">
                                 <h4>
                                     <?php echo $row["ten_daotao_khoahoc"]; ?> </h4>
-                                <p class="price" style="color: red;"><?php echo $row["price"]; ?>đ</p>
+                                <p class="price" style="color: red;"><?php echo number_format($row["price"]) . ' vnd'; ?></p>
                             </div>
 
                             <h3><a
@@ -35,7 +43,7 @@
                                 <?php echo $row["mota"]; ?>
                             </p>
                             <a href="websiteEdu/soursedetail_info/<?php echo $row["id_sourse_detail"]; ?>">
-                                <p style="color: #296849;">Xem chi tiết khóa học--></p>
+                                <p style="color: #296849;">Xem chi tiết khóa học ----></p>
                             </a>
                             <!-- <div class="trainer d-flex justify-content-between align-items-center">
                                 <div class="trainer-profile d-flex align-items-center">
@@ -56,7 +64,8 @@
                         </div>
                     </div>
                 </div> <!-- End Course Item-->
-                <?php } ?>
+                <?php }
+            } ?>
             </div>
 
         </div>

@@ -125,7 +125,7 @@ h6 {
 # Header
 --------------------------------------------------------------*/
 #header {
-  background: #fff;
+  background: #eef0ef;
   transition: all 0.5s;
   z-index: 997;
   padding: 15px 0;
@@ -161,7 +161,7 @@ h6 {
 */
 .get-started-btn {
   margin-left: 22px;
-  background: #5fcf80;
+  background: #668A74;
   color: #fff;
   border-radius: 50px;
   padding: 8px 25px;
@@ -172,7 +172,7 @@ h6 {
 }
 
 .get-started-btn:hover {
-  background: #3ac162;
+  background: #5fcf80;
   color: #fff;
 }
 
@@ -191,6 +191,7 @@ h6 {
 */
 .navbar {
   padding: 0;
+  
 }
 
 .navbar ul {
@@ -411,8 +412,9 @@ h6 {
 #hero {
   width: 100%;
   height: 80vh;
-  background: url("https://thumbs.gfycat.com/BewitchedAntiqueAllensbigearedbat-size_restricted.gif")
-    top center;
+  background-image: url(https://media3.giphy.com/media/CceU4NgVHBK1y/giphy.gif?cid=ecf05e474x430240flt4xv76ppccycvvfxhrv3sa730rxrxz&rid=giphy.gif&ct=g);
+  /* background: url("https://media3.giphy.com/media/CceU4NgVHBK1y/giphy.gif?cid=ecf05e474x430240flt4xv76ppccycvvfxhrv3sa730rxrxz&rid=giphy.gif&ct=g")
+    top center; */
   background-size: cover;
   position: relative;
 }

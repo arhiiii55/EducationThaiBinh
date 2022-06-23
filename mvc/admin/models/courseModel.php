@@ -70,13 +70,15 @@ class courseModel extends DB
         // echo $qrstudent ;
 
     }
-    // public function getEdu_byid($edusource_id)
-    // {
-    //     $qrCourse = " SELECT * FROM  soursedetail 
-    //     WHERE edusource_id = '$edusource_id'
-    //     ";
-    //     return $rerult =  mysqli_query($this->conn, $qrCourse);
-    // }
+    public function getEdu_byid($edusource_id)
+    {
+        $qrCourse = "SELECT * FROM `edusourses` AS e 
+        INNER JOIN `soursedetail` as s 
+        ON e.id_eduSource = s.edusource_id 
+        WHERE e.id_eduSource = '$edusource_id'
+        ";
+        return $rerult =  mysqli_query($this->conn, $qrCourse);
+    }
 
     public function insertSourseDeitail($makh, $edu, $tenkh, $mota, $ngay, $sltuan, $sltiet, $ngaykhaigiang, $ngayketthuc, $tinhtrang, $active, $price)
     {
@@ -137,15 +139,6 @@ class courseModel extends DB
             $result = true;
         }
         return  json_encode($result);
-    }
-    public function getEdu_byid($edusource_id)
-    {
-
-        $qrCourse = " SELECT * FROM  soursedetail 
-			INNER JOIN edusourses ON soursedetail.edusource_id = edusourses.id_eduSource
-			WHERE edusource_id = '$edusource_id'
-            ";
-        return $rerult =  mysqli_query($this->conn, $qrCourse);
     }
     public function timeabledays_delete($id_day)
     {

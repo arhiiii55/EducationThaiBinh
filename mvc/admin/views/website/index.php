@@ -1,8 +1,8 @@
 <!-- ======= Hero Section ======= -->
 <section id="hero" class="d-flex justify-content-center align-items-center">
     <div class="container position-relative" data-aos="zoom-in" data-aos-delay="100">
-        <h1>Học Hôm Nay,<br />Làm Chủ Ngày Mai</h1>
-        <h2>The Foundation Of Knowledge</h2>
+        <h1 style="text-transform: capitalize;">Đào tạo tài năng trẻ,<br />Nâng cao sức khỏe</h1>
+        <h2>Thai Binh Sports</h2>
         <h2></h2>
         <a href="websiteEdu/contactPage" class="btn-get-started">Đăng ký</a>
     </div>
@@ -11,51 +11,40 @@
 
 <main id="main">
     <!-- ======= About Section ======= -->
-    <section id="about" class="about">
+    <section id="about" class="about" style="background: #eef0ef">
         <div class="container" data-aos="fade-up">
             <div class="row">
                 <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-left" data-aos-delay="100">
-                    <!-- <img src="http://localhost/adminqledu/mvc/websiteEdu/assets/img/banner/banner-about.jpg"
-                        class="img-fluid" alt="" /> -->
-                    <img src="http://localhost/adminqledu/mvc/websiteEdu/assets/img/banner/banner-about.jpg"
+                    <img src="http://localhost/adminqledu/mvc/websiteEdu/assets/img/hoc-vo-2.jpg"
                         class="img-fluid" alt="" />
-                    <!-- <iframe src="https://giphy.com/embed/QvMybzkScTcqHJiZx0" width="100%" height="100%"
-                        style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe> -->
                 </div>
-                <!-- nhúng -->
-                <!-- <div style="width:100%;height:0;padding-bottom:56%;position:relative;"></div> -->
-                <p><a href="https://giphy.com/gifs/data-lines-trails-QvMybzkScTcqHJiZx0">via GIPHY</a></p>
                 <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
                     <h3 style="color: #296849">THÀNH CÔNG CỦA BẠN LÀ NIỀM TỰ HÀO CỦA CHÚNG TÔI!</h3>
                     <p class="fst-italic">
-                        <b>HCM Academy</b> khát vọng mang lại những nền tảng kiến thức
-                        mới nhất cho học viên.
+                        <b>Thai Binh Sports</b> khát vọng mang lại những nền tảng thể chất
+                        tốt nhất cho học viên.
                     </p>
                     <p class="fst-italic p2">
-                        <b> ĐỊNH HƯỚNG TỚI DOANH NGHIỆP VÀ VIỆC LÀM</b>
+                        <b> ĐỊNH HƯỚNG TỚI SỨC KHỎE VÀ THỂ LỰC</b>
                     </p>
                     <ul>
                         <li>
-                            <i class="bi bi-check-circle"></i> Cung cấp cho Doanh nghiệp
-                            một nguồn nhân sự chuyên nghiệp, chất lượng, có trách nhiệm
+                            <i class="bi bi-check-circle"></i> Cung cấp cho Học viên
+                            những bài tập thể chất phù hợp, chất lượng phù hợp với lứa tuổi
                         </li>
                         <li>
-                            <i class="bi bi-check-circle"></i> Tiết kiệm được thời gian
-                            đào tạo lại, tiết kiệm được chi phí và nhân sự cho Doanh
-                            nghiệp.
+                            <i class="bi bi-check-circle"></i> Nâng cao thể chất, tăng cường sức khỏe, hướng tới
+                             xây dựng nền thể thảo nước nhà
                         </li>
                         <li>
-                            <i class="bi bi-check-circle"></i> Thúc đẩy sự phát triển CNTT
-                            trong thời đại công nghiệp 4.0.
+                            <i class="bi bi-check-circle"></i> Thúc đẩy sự phát triển thể dục thể thao, tham dự
+                             các cuộc thi thể thao trong nước và quốc tế
                         </li>
                     </ul>
                     <p>
-                        <b>HCM Academy</b> giúp học viên tự tin chủ động tạo ra những
-                        sản phẩm của riêng cá nhân mình. Chúng tôi nguyện dẫn dắt học
-                        viên đi từ lúc chưa biết gì, cho đến lúc bạn hoàn toàn làm chủ
-                        tư duy và kiến thức của mình, hoàn toàn tự tin vào năng lực của
-                        bản thân, và trở thành một lập trình viên được các công ty công
-                        nghệ săn đón.
+                        <b>Thai Binh Sports</b> giúp học viên tự tin vào nển tảng thể chất của cá nhân mình.
+                        Chúng tôi nguyện dẫn dắt học viên hoàn toàn tự tin vào năng lực của
+                        bản thân, và trở thành một người có sức khỏe tôt.
                     </p>
                 </div>
             </div>
@@ -69,7 +58,7 @@
 
     <!-- End Features Section -->
     <!-- ======= Why Us Section ======= -->
-    <section id="why-us" class="why-us">
+    <!-- <section id="why-us" class="why-us" style="background: #eef0ef">
         <div class="container" data-aos="fade-up">
             <div class="row">
                 <div class="col-lg-4 d-flex align-items-stretch">
@@ -147,13 +136,12 @@
                             </div>
                         </div>
                     </div>
-                    <!-- End .content-->
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
     <!-- End Why Us Section -->
-    <section id="features" class="features">
+    <section id="features" class="features" style="background: #eef0ef">
         <div class="container" data-aos="fade-up">
             <div class="row" data-aos="zoom-in" data-aos-delay="100">
 
@@ -161,15 +149,17 @@
                     <h2>Chương Trình Đào Tạo</h2>
                 </div>
                 <?php
-                //  $row1 = mysqli_fetch_row($data["getEdu_byid1"])
+                while ($row_edu = mysqli_fetch_assoc($data["view_edu"])) {
                 ?>
                 <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
                     <div class="icon-box">
-                        <i class="bi bi-laptop" style="color: #5578ff"></i>
-                        <h3><a href="websiteEdu/eduCourse_byid/1">Lập trình Front-End</a>
+                        <i class="bi <?php echo $row_edu["icon"];?>" style="color: #5578ff"></i>
+                        <h3><a href="websiteEdu/eduCourse_byid/<?php echo $row_edu["id_eduSource"];?>"><?php echo $row_edu["ten_daotao_khoahoc"];?></a>
                         </h3>
                     </div>
                 </div>
+                <?php }?>
+<!--                 
                 <div class="col-lg-3 col-md-4">
                     <div class="icon-box">
                         <i class="bi bi-braces" style="color: #ffbb2c"></i>
@@ -188,13 +178,13 @@
                         <i class="bi bi-translate" style="color: #e361ff"></i>
                         <h3><a href="websiteEdu/eduCourse_byid/3">Tiếng Anh</a></h3>
                     </div>
-                </div>
+                </div> -->
 
             </div>
         </div>
     </section>
     <!-- ======= Popular Courses Section ======= -->
-    <section id="popular-courses" class="courses">
+    <section id="popular-courses" class="courses" style="background: #eef0ef">
         <div class="container" data-aos="fade-up">
             <div class="section-title">
                 <h2>Khóa Học Phổ Biến </h2>
@@ -336,11 +326,11 @@
     <!-- End Popular Courses Section -->
 
     <!-- ======= Trainers Section ======= -->
-    <section id="trainers" class="trainers">
+    <section id="trainers" class="trainers" style="background: #eef0ef">
         <div class="container" data-aos="fade-up">
             <div class="row" data-aos="zoom-in" data-aos-delay="100">
                 <div class="section-title">
-                    <h2>Đội Ngũ Giáo Viên</h2>
+                    <h2>Huấn luyện viên</h2>
                     <p>Họ Là Ai ?</p>
                 </div>
                 <div class="col-lg-11 col-md-11 d-flex align-items-stretch">

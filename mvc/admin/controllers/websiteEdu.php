@@ -27,6 +27,7 @@ class WebsiteEdu extends Controllers
             'showEduDeitail' => $modelindex->ShowCourseDetail(),
             'showListTrainers' => $modelindex->showDSTrainer(),
             'eduCourse_all' => $courseModel->eduCourse_all(),
+            "view_edu" => $modelindex->view_edu(),
             'red' =>  'echo success'
         ]);
     }
@@ -53,6 +54,7 @@ class WebsiteEdu extends Controllers
             'showEdu' => $modelindex->ShoweduCourse(),
             'showEduDeitail' => $modelindex->ShowCourseDetail(),
             'showListTrainers' => $modelindex->showDSTrainer(),
+            "view_edu" => $modelindex->view_edu(),
             'red' =>  'echo success'
         ]);
     }

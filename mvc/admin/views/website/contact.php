@@ -14,10 +14,8 @@
     <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact">
         <div data-aos="fade-up">
-            <iframe style="border:0; width: 100%; height: 350px;"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.6665490587156!2d106.6371963145113!3d10.836809992280557!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3175298297f1d87f%3A0x9ac3ac4e7b102696!2zMi83OSBQaGFuIEh1eSDDjWNoLCBQaMaw4budbmcgMTIsIEfDsiBW4bqlcCwgVGjDoG5oIHBo4buRIEjhu5MgQ2jDrSBNaW5oLCBWaeG7h3QgTmFt!5e0!3m2!1svi!2s!4v1622642294740!5m2!1svi!2s"
-                frameborder="0" allowfullscreen></iframe>
-            <!-- <iframe src="" width="1000" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe> -->
+        <iframe style="border:0; width: 100%; height: 350px;" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15666.870789794837!2d106.844618!3d10.984668!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x3c6feaef748f95fe!2sC%C3%B4ng%20ty%20TNHH%20TMDV%20TDTT%20Th%C3%A1i%20B%C3%ACnh!5e0!3m2!1svi!2s!4v1655962778606!5m2!1svi!2s" 
+            frameborder="0" allowfullscreen></iframe>
         </div>
 
         <div class="container" data-aos="fade-up">
@@ -29,7 +27,7 @@
                         <div class="address">
                             <i class="bi bi-geo-alt"></i>
                             <h4>Địa chỉ:</h4>
-                            <p>279 Phan Huy Ích, Phường 14, Quận Gò Vấp, TP.HCM </p>
+                            <p>65, Lô B2, Khu Phố 11, Tân Phong, Thành phố Biên Hòa, Đồng Nai</p>
                         </div>
 
                         <div class="email">
@@ -67,10 +65,11 @@
                         </div>
                         <div class="form-group mt-3">
                             <select name="quantamKH" class="form-control">
-                                <option value="Lập trình Front_End">Lập trình Front-End</option>
-                                <option value="Lập trình Back_End">Lập trình Back-End</option>
-                                <option value="Tiếng Nhật">Tiếng Nhật</option>
-                                <option value="Tiếng Anh">Tiếng Anh</option>
+                                <?php
+                                 while ($row_edu = mysqli_fetch_assoc($data["view_edu"])) {
+                                ?>
+                                    <option value="<?php echo $row_edu["id_eduSource"];?>"><?php echo $row_edu["ten_daotao_khoahoc"];?></option>
+                                <?php }?>
                             </select>
                         </div>
 

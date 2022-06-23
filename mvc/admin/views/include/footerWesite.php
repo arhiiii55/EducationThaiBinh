@@ -6,10 +6,10 @@
             <div class="row">
 
                 <div class="col-lg-3 col-md-6 footer-contact">
-                    <h3>HCM Academy</h3>
+                    <h3>Thai Binh Sports</h3>
                     <p>
-                        279 Phan Huy Ích, <br>
-                        Phường 14, Quận Gò Vấp, TP.HCM<br>
+                    65, Lô B2, Khu Phố 11,  <br>
+                    Tân Phong, Thành phố Biên Hòa, Đồng Nai<br>
                         <br><br>
                         <strong>Phone:</strong>0899 883 234.<br>
                         <strong>Email:</strong> info.academyhcm@gmail.com<br>

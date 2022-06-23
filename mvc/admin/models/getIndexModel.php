@@ -44,4 +44,9 @@ class getIndexModel extends DB
         $qrmail = "SELECT * FROM `mailinstudent` WHERE `tinhtrang` = 'chua duyet' OR `tinhtrang` = ' ' ";
         return $rerult =  mysqli_query($this->conn, $qrmail);
     }
+    public function view_edu()
+    {
+        $qredu = "SELECT * FROM `edusourses`";
+        return $rerult =  mysqli_query($this->conn, $qredu);
+    }
 }
