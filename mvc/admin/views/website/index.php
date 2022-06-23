@@ -19,8 +19,8 @@
                         class="img-fluid" alt="" /> -->
                     <img src="http://localhost/adminqledu/mvc/websiteEdu/assets/img/banner/banner-about.jpg"
                         class="img-fluid" alt="" />
-                    <iframe src="https://giphy.com/embed/QvMybzkScTcqHJiZx0" width="100%" height="100%"
-                        style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+                    <!-- <iframe src="https://giphy.com/embed/QvMybzkScTcqHJiZx0" width="100%" height="100%"
+                        style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe> -->
                 </div>
                 <!-- nhúng -->
                 <!-- <div style="width:100%;height:0;padding-bottom:56%;position:relative;"></div> -->
