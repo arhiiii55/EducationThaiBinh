@@ -13,12 +13,13 @@
                 </li>
 
                 <li class="submenu">
-                    <a href="">
+                    <a>
                         <i class="fas fa-user"></i>
                         <span> Tài Khoản</span>
                         <span class="menu-arrow"></span>
                         <ul class="list-unstyled">
-                            <a href="">Lịch Học</a>
+                            <a href="pagestudent_home/student_status_ST/<?php echo $_SESSION["MaHV"]; ?>">Hồ sơ cá
+                                nhân</a>
                             <a href="">Lớp Học</a>
                         </ul>
                     </a>

@@ -57,20 +57,20 @@ class pagestudent_home extends Controllers
                     // echo 'cai này được';
                     $_SESSION["id"] = $id;
                     $this->view("masterStudentLayout", [
-                        "pagestudent" => "pageStudent/bill_classActive",
+                        "pagestudent" => "pageStudent/notification_page",
                         "mau" => 'red',
                     ]);
                 } else {
 
                     $this->view("masterStudentLayout", [
-                        "pagestudent" => "pageStudent/bill_classActive",
+                        "pagestudent" => "pageStudent/notification_page",
 
                     ]);
                 }
             } else {
                 // echo 'thất bại';
                 // $result = $this->model("userModel");
-                $this->view("pageStudent/bill_classActive", [
+                $this->view("pageStudent/notification_page", [
                     "result" => $result_mess
                 ]);
             }

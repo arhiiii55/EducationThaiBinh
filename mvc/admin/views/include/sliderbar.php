@@ -33,6 +33,14 @@
                         <span> Mailbox </span>
                     </a>
                 </li>
+                <li class="submenu">
+                    <a href="mail/mailSendLocal/">
+                        <!-- <span class="label radius-circle bg-danger float-right">18</span> -->
+                        <i class="fa-2x mr-2 far fa-bell">
+                        </i>
+                        <span>Thông Báo</span>
+                    </a>
+                </li>
                 <!-- <li class="submenu">
                     <a href="./studentPage">
                         <i class=" fa-2x mr-2 fas fa-user-graduate"></i>

@@ -35,7 +35,7 @@
                         <div class="card-body">
 
                             <div class="row">
-                                <div class="col-lg-9 col-xl-9">
+                                <div class="col-lg-11 col-xl-11">
                                     <form action="mail/mailSendLocal/" method="post">
                                         <div class="row">
                                             <div class="col-lg-12">
@@ -65,8 +65,8 @@
                                                 </select>
                                                 <br>
                                             </div>
-                                            <div class="col-lg-12">
-                                                <button type="submit" name="submit_add" class="btn btn-primary"> xác
+                                            <div class="col-lg-12 modal-footer">
+                                                <button type="submit" name="submit_add" class="btn btn-primary">Xác
                                                     nhận
                                                 </button>
 
@@ -89,14 +89,16 @@
 
                                 </div>
 
-
+                                <!-- 
                                 <div class="col-lg-3 col-xl-3 border-left">
                                     <?php
-                                    $row_account = mysqli_fetch_assoc($data["result"])
+                                    // $row_account = mysqli_fetch_assoc($data["result"])
                                     ?>
-                                    <b>Người gửi</b>: <?php echo $_SESSION["ten_taikhoan"]; ?><br />
+                                    <b>Người gửi</b>: <?php
+                                                        //  echo $_SESSION["ten_taikhoan"]; 
+                                                        ?><br />
                                     <br />
-                                </div>
+                                </div> -->
                             </div>
 
                         </div>
