@@ -9,9 +9,10 @@
     <link rel="shortcut icon" href="assets/images/fav.jpg" />
     <link rel="stylesheet" href="http://localhost/adminqledu/mvc/admin/views/assets/css/bootstrap.min.css" />
     <link rel="stylesheet" href="http://localhost/adminqledu/mvc/admin/views/assets/css/fontawsom-all.min.css" />
+    <base href="http://localhost/adminqledu/">
     <link rel="stylesheet" type="text/css"
         href="http://localhost/adminqledu/mvc/admin/views/assets/css/clientLogin.css" />
-    <base href="http://localhost/adminqledu/">
+
 </head>
 
 <body>
@@ -25,18 +26,18 @@
             ">
                     <h2 style="margin-bottom: 40px">Đăng nhập</h2>
                     <div class="text-box-cont">
-                        <form action="pagestudent_home/Student_Page" method="POST">
+                        <form action="pagestudent_home/student_Page" method="POST">
                             <div class="input-group mb-3">
-                                <input type="text" class="form-control" placeholder="Tên tài khoản"
-                                    aria-label="Username" name="ten_dangnhap" aria-describedby="basic-addon1" />
+                                <input type="text" class="form-control" placeholder="Tên tài khoản" name="ten_dangnhap"
+                                    aria-describedby="basic-addon1" />
                             </div>
                             <div class="input-group mb-3">
-                                <input type="text" class="form-control" placeholder="Mật khẩu" aria-label="Username"
-                                    name="mk_taikhoan" aria-describedby="basic-addon1" />
+                                <input type="password" class="form-control" placeholder="Mật khẩu" name="mk_taikhoan"
+                                    aria-describedby="basic-addon1" />
                             </div>
                             <br />
                             <div class="right-bkij mb-3" style=" display: flex;justify-content: center;">
-                                <button type="submit" name="btndangnhap" class="btn btn-success btn-round">Đăng
+                                <button type="submit" name="btndangnhap_st" class="btn btn-success btn-round">Đăng
                                     nhập</button>
                             </div>
                         </form>

@@ -1,6 +1,6 @@
 <?php
-if (!$_SESSION["id_account"]) {
-    header("location:http://localhost/adminqledu/websiteEdu/mainPage");
+if (!$_SESSION["id"]) {
+    header("location:http://localhost/adminqledu/websiteEdu/mainPage_GT");
 }
 ?>
 <!DOCTYPE html>
@@ -24,7 +24,7 @@ if (!$_SESSION["id_account"]) {
     <!-- Font Awesome CSS -->
     <link href="./mvc/admin/views/assets/font-awesome/css/all.css" rel="stylesheet" type="text/css" />
     <!-- Custom CSS -->
-    <link href="mvc/admin/views/assets/css/style.css" rel=" stylesheet" type="text/css" />
+    <link href="./mvc/admin/views/assets/css/style.css" rel=" stylesheet" type="text/css" />
 
     <!-- BEGIN CSS for this page -->
     <link rel="" type="text/css" href="./mvc/admin/views/assets/plugins/chart.js/Chart.min.css" />

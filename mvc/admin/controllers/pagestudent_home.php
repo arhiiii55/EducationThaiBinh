@@ -29,11 +29,12 @@ class pagestudent_home extends Controllers
             "result" => $result_mess
         ]);
     }
-    public function Student_Page()
+    public function student_Page()
     {
         $result_mess = false;
         // $qrTK = $this->model("userModel");
-        if (isset($_POST["btndangnhap"])) {
+
+        if (isset($_POST["btndangnhap_st"])) {
             $username = $_POST["ten_dangnhap"];
             $password_input = $_POST["mk_taikhoan"];
             if (empty($_POST["ten_dangnhap"]) || empty($_POST["mk_taikhoan"])) {
@@ -54,23 +55,22 @@ class pagestudent_home extends Controllers
                     $password = $row["password"];
                 }
                 if (password_verify($password, $password_input)) {
-                    // echo 'cai này được';
+                    echo 'cai này được';
                     $_SESSION["id"] = $id;
                     $this->view("masterStudentLayout", [
                         "pagestudent" => "pageStudent/notification_page",
                         "mau" => 'red',
                     ]);
                 } else {
-
                     $this->view("masterStudentLayout", [
                         "pagestudent" => "pageStudent/notification_page",
-
                     ]);
                 }
             } else {
                 // echo 'thất bại';
                 // $result = $this->model("userModel");
-                $this->view("pageStudent/notification_page", [
+                $this->view("masterStudentLayout", [
+                    "pagestudent" => "pageStudent/notification_page",
                     "result" => $result_mess
                 ]);
             }
