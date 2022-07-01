@@ -25,8 +25,8 @@
                     </a>
                 </li>
                 <li class="submenu">
-                    <a href="">
-                        <span class="label radius-circle bg-danger float-right">18</span>
+                    <a href="pagestudent_home/notification_Page/<?php echo $_SESSION["id"]; ?>">
+                        <!-- <span class="label radius-circle bg-danger float-right">18</span> -->
                         <i class="fas fa-envelope"></i>
                         <span>Thư</span>
 

@@ -144,4 +144,13 @@ class studentModel extends DB
         WHERE `id_students` = '$id'";
         return $result =  mysqli_query($this->conn, $qrview);
     }
+
+    //--------------------------------- student page ---------------------------------
+    public function getInfoStudent($id)
+    {
+        $qrstudent = "SELECT * FROM  `students` INNER JOIN accountgoogleapi ON accountgoogleapi.username = students.MaHV
+        WHERE `id` =  '$id' ";
+        return mysqli_query($this->conn, $qrstudent);
+    }
+
 }

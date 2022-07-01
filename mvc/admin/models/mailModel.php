@@ -93,12 +93,12 @@ class mailModel extends DB
         return $rerult =  mysqli_query($this->conn, $qrmail);
     }
     //--------------------------------- student page ---------------------------------
-    public function getMail_notification($id, $mahv)
+    public function getMail_notification($id)
     {
         $qrmail = "SELECT * FROM notification
         INNER JOIN students ON students.id_students = notification.student_id
         INNER JOIN accountgoogleapi ON accountgoogleapi.username = students.MaHV
-        WHERE `id` = '$id' AND `username` = '$mahv'";
+        WHERE `id` = '$id'";
         return $rerult =  mysqli_query($this->conn, $qrmail);
     }
     public function insert_notification($id_account, $id_student, $tieude, $noidung, $ngaygui, $loaithongbao)

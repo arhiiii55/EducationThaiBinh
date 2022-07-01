@@ -54,7 +54,8 @@ class pagestudent_home extends Controllers
                     $username = $row["username"];
                     $password = $row["password"];
                 }
-                if (password_verify($password, $password_input)) {
+                // password_verify($password, $password_input)
+                if ($password ==  $password_input) {
                     echo 'cai này được';
                     $_SESSION["id"] = $id;
                     $this->view("masterStudentLayout", [
@@ -76,5 +77,25 @@ class pagestudent_home extends Controllers
             }
             //lấy view  
         }
+    }
+
+    public function notification_Page($id)
+    {
+        $mailModel = $this->model("mailModel");
+        // echo $mahv;
+        $this->view("masterStudentLayout", [
+            "pagestudent" => "pageStudent/notification_all",
+            "getmail"=>$mailModel->getMail_notification($id)
+        ]);
+    }
+
+    public function account_Page($id)
+    {
+        $studentModel = $this->model("studentModel");
+        // echo $mahv;
+        $this->view("masterStudentLayout", [
+            "pagestudent" => "pageStudent/notification_all",
+            "getmail"=>$mailModel->getMail_notification($id)
+        ]);
     }
 }

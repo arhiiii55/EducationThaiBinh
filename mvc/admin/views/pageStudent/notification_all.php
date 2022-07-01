@@ -8,11 +8,7 @@
             <div class="row">
                 <div class="col-xl-12">
                     <div class="breadcrumb-holder">
-                        <h1 class="main-title float-left">Inbox</h1>
-                        <ol class="breadcrumb float-right">
-                            <li class="breadcrumb-item">Home</li>
-                            <li class="breadcrumb-item active">Inbox</li>
-                        </ol>
+                        <h1 class="main-title float-left">Thư</h1>
                         <div class="clearfix"></div>
                     </div>
                 </div>
@@ -22,9 +18,6 @@
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
                     <div class="card mb-3">
-                        <div class="card-header">
-                            <h3><i class="far fa-envelope"></i> messages (unread)</h3>
-                        </div>
                         <!-- end card-header -->
                         <div class="card-body">
 
@@ -33,9 +26,7 @@
                                 <table class="table table-condensed table-hover table-bordered table-responsive-md">
                                     <thead>
                                         <tr>
-                                            <th style="min-width:320px">Chi tiết Message</th>
-                                            <th style="min-width:180px">Thông tin người gửi</th>
-                                            <th style="min-width:100px">Actions</th>
+                                            <th style="min-width:320px; font-size: 23px;">Chi tiết nội dung</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -47,39 +38,18 @@
                                             <div class="chiaphan">
                                                 <td>
                                                     <h5><span class="text-danger"><b>
-                                                                [<?php echo $row["tinhtrang"]; ?>]
+                                                                [<?php echo $row["tieude"]; ?>]
                                                             </b></span>
-                                                        <a href="Home/mailboxReply/<?php echo $row["id_mailbox"] ?>"><b>
-                                                                <?php echo $row["tieude"]; ?>
-                                                            </b></a>
+
                                                     </h5>
-                                                    <p>June 04 2018, 13:15</p>
-                                                    <p>
-                                                        <?php echo $row["quantamKH"]; ?>
+                                                    <p> Ngày nhận:
+                                                        <?php echo $row["ngaygui"]; ?>.
                                                     </p>
-                                                    <p>
-                                                        <?php echo $row["noidung"]; ?>.
+                                                    <p style="margin-bottom: -2px; font-weight: bold;">Nội dung: </p>
+                                                    <p style="font-size: 20px;">
+                                                        <?php echo $row["noidung"]; ?>
                                                     </p>
-                                                </td>
 
-                                                <td>
-                                                    <div class="mail_list">
-                                                        <p>
-                                                            <?php echo $row["tendk"]; ?>
-                                                        </p>
-                                                        <p>
-                                                            <?php echo $row["email"]; ?>
-                                                        </p>
-                                                    </div>
-                                                </td>
-
-                                                <td>
-                                                    <a href="Home/mailboxReply/<?php echo $row["id_mailbox"] ?>"
-                                                        class="btn btn-primary btn-sm btn-block"><i
-                                                            class="fas fa-search"></i> Read</a>
-                                                    <a href="Home/mailbox_delete/<?php echo $row["id_mailbox"] ?>"
-                                                        class="btn btn-danger btn-sm btn-block mt-2"><i
-                                                            class="fas fa-trash"></i> Delete</a>
                                                 </td>
                                             </div>
 
