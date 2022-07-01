@@ -80,4 +80,55 @@ class mail extends Controllers
             // }
         }
     }
+    public function mailSendLocal_view()
+    {
+        $userModel = $this->model("userModel");
+        $studentModel = $this->model("studentModel");
+        $this->view("masterAdminLayout", [
+            "pages" => "page/mail_sendLocal",
+            "showstudent" => $studentModel->showstudent(),
+            "result" => $userModel->gettk(),
+            // "MailboxDeital" => $datamail->MailboxDeital($id_mailbox),
+        ]);
+    }
+    public function mailSendLocal()
+    {
+        $result_mess = false;
+        if (isset($_POST["submit_add"])) {
+            $studentModel = $this->model("studentModel");
+            $mailModel = $this->model("mailModel");
+            $userModel = $this->model("userModel");
+            // $row_result = mysqli_fetch_assoc($result);
+            $id_student = isset($_POST['id_student']) ? $_POST['id_student'] : '';
+            $tieude = isset($_POST['tieude']) ? $_POST['tieude'] : '';
+            $noidung = isset($_POST['noidung']) ? $_POST['noidung'] : '';
+            $ngaygui = date("Y/m/d");
+            $loaithongbao = isset($_POST['loaithongbao']) ? $_POST['loaithongbao'] : '';
+
+            // empty kiểm tra rỗng
+            if (empty($_POST["id_student"] && $_POST["tieude"] && $_POST["noidung"] && $_POST["loaithongbao"])) {
+                $this->view("masterAdminLayout", [
+                    "pages" => "page/mail_sendLocal",
+                    "showstudent" => $studentModel->showstudent(),
+                    "result" => $userModel->gettk(),
+                    "resultCreate_bill" => $result_mess
+                ]);
+            }
+            $this->view("masterAdminLayout", [
+                "pages" => "page/mail_sendLocal",
+                "insert_notification" => $mailModel->insert_notification($_SESSION["id_account"], $id_student, $tieude, $noidung, $ngaygui, $loaithongbao),
+                "showstudent" => $studentModel->showstudent(),
+                "result" => $userModel->gettk(),
+            ]);
+        } else {
+            $userModel = $this->model("userModel");
+            $studentModel = $this->model("studentModel");
+            $this->view("masterAdminLayout", [
+                "pages" => "page/mail_sendLocal",
+                "showstudent" => $studentModel->showstudent(),
+                "result" => $userModel->gettk(),
+                // "MailboxDeital" => $datamail->MailboxDeital($id_mailbox),
+            ]);
+        }
+    }
 }

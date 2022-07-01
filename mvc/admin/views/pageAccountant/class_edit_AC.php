@@ -178,6 +178,77 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="card">
+                                    <div class="card-header" role="tab" id="headingThree">
+                                        <h5 class="mb-0">
+                                            <a class="collapsed" data-toggle="collapse" href="#collapseThree"
+                                                aria-expanded="false" aria-controls="collapseThree">
+                                                Dạnh sách Học Viên
+                                            </a>
+                                        </h5>
+                                    </div>
+                                    <div id="collapseThree" class="collapse" role="tabpanel"
+                                        aria-labelledby="headingThree" data-parent="#accordion">
+                                        <div class="card-body">
+                                            <div class="table-responsive">
+                                                <table id="dataTable" class="table table-bordered table-hover display"
+                                                    style="width:100%">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Mã Học Viên</th>
+                                                            <th>Tên Học Viên</th>
+                                                            <th>Tên Khóa Học</th>
+                                                            <th>Số Điện Thoại </th>
+                                                            <th>Gmail</th>
+                                                            <th>Phòng học</th>
+                                                            <th>Khung giờ</th>
+                                                            <th>Ca học</th>
+                                                            <th>Tình trạng</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <?php
+                                                        $i = 1;
+                                                        while ($row3 = mysqli_fetch_array($data["bill_stinclass"])) {
+                                                        ?>
+                                                    <tbody>
+                                                        <tr><?php $i++; ?>
+                                                            <th>
+                                                                <?php echo $row3["MaHV"]; ?></th>
+                                                            <td>
+                                                                <?php echo $row3["tenhv"]; ?></td>
+                                                            <td> <?php echo $row3["tenkhoahoc"]; ?></td>
+                                                            <td> <?php echo $row3["sdt"]; ?></td>
+                                                            <td> <?php echo $row3["gmail"]; ?></td>
+                                                            <td> <?php echo $row3["phong"]; ?></td>
+                                                            <td> <?php echo $row3["giohoc"]; ?></td>
+                                                            <td> <?php echo $row3["cahoc"]; ?></td>
+                                                            <td> <?php if ($row3["tinhtrang"] != 'Đã đóng tiền') {
+                                                                            ?>
+                                                                <p style="color: red;">
+                                                                    <?php echo "Chưa Đóng Tiền"; ?>
+                                                                    <a href="Bill/allbill_edit/<?php echo $row3["id_bill"] ?>"
+                                                                        class="btn btn-primary btn-sm btn-block"><i
+                                                                            class="far fa-edit"></i>
+                                                                        Thanh Toán</a>
+                                                                </p>
+                                                                <?php
+                                                                            } else {
+                                                                                echo  $row3["tinhtrang"];
+                                                                            } ?>
+                                                            </td>
+
+                                                    </tbody>
+                                                    <?php } ?>
+                                                </table>
+                                            </div>
+                                            <!-- end table-responsive-->
+
+                                        </div>
+                                        <div class="card-body">
+
+                                        </div>
+                                    </div>
+                                </div>
                                 <?php
                                     //  } 
                                     ?>

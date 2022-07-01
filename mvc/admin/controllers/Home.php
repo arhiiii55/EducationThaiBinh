@@ -295,12 +295,12 @@ class Home extends Controllers
     {
         $username = $_POST["ten_dangnhap"];
         $password_input = $_POST["mk_taikhoan"];
-        $result = $this->model("userModel")->login($username, $password_input);
+           if (empty($_POST["ten_dangnhap"]) || empty($_POST["mk_taikhoan"])) {
+            $this->view("page/login", []);
+        }$result = $this->model("userModel")->login($username, $password_input);
         // $qrlogin = " SELECT * FROM account_user WHERE `ten_taikhoan` = '$username' ";
         // $result =  mysqli_query($this->conn, $qrlogin);
-        if (empty($_POST["ten_dangnhap"]) || empty($_POST["mk_taikhoan"])) {
-            $this->view("page/login", []);
-        }
+     
         $qr = mysqli_num_rows($result);
         if ($qr > 0) {
             while ($row = mysqli_fetch_assoc($result)) {

@@ -24,8 +24,8 @@
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
                     <div class="card mb-3">
                         <div class="card-header">
-                            <h3><i class="fas fa-table"></i> Bảng Thông tin Học sinh thu thập được</h3>
-                            <p> Quản lý học viên gồm thông tin cơ bản của học viên và những học viên đã đăng ký khóa học
+                            <h3><i class="fas fa-table"></i> </h3>
+                            <p>
                             </p>
                         </div>
 
@@ -41,95 +41,27 @@
                                     <div class="col-md-8">
                                         <div class="invoice-title text-left mb-3">
                                             <h2>Danh Sách Học Phí: </h2>
-                                            <strong></strong> April 17, 2018
+                                            Ngày giờ: <strong><?php
+                                                                $today = date("d/m/Y h:i a");
+                                                                echo $today;
+                                                                ?></strong>
                                         </div>
                                         <hr>
-                                        <h6 style="color:darkblue;">Tìm kiếm theo ngày tháng: </h6>
-                                        <div class="card-body">
+                                        <?php
+                                        $i = 1;
+                                        while ($row = mysqli_fetch_assoc($data["bill_stinclass_groupBy"])) {
+                                        ?>
+                                        <h6 style="color:darkblue;">Danh sách tình trạng học phí của lớp:
+                                        </h6>
+                                        <h5><?php echo $row["ten_lop"]; ?></h5>
+                                        <?php echo $row["malop"]; ?>
+                                        <?php } ?>
 
-                                            <div class="row">
-
-                                                <form action="Bill/bill_statement_getPara/" method="post"
-                                                    enctype="multipart/form-data">
-                                                    <div class="row">
-                                                        <div class="col-lg-4">
-                                                            <div class="form-group">
-                                                                <label>Theo tháng:</label>
-                                                                <select name="month" class="form-control">
-                                                                    <option value="1"> Tháng 1 </option>
-                                                                    <option value="2"> Tháng 2 </option>
-                                                                    <option value="3"> Tháng 3 </option>
-                                                                    <option value="4"> Tháng 4 </option>
-                                                                    <option value="5"> Tháng 5 </option>
-                                                                    <option value="6"> Tháng 6 </option>
-                                                                    <option value="7"> Tháng 7 </option>
-                                                                    <option value="8"> Tháng 8 </option>
-                                                                    <option value="9"> Tháng 9 </option>
-                                                                    <option value="10"> Tháng 10 </option>
-                                                                    <option value="11"> Tháng 11 </option>
-                                                                    <option value="12"> Tháng 12 </option>
-                                                                </select>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-lg-4">
-                                                            <div class="form-group">
-                                                                <label>Theo năm:</label>
-                                                                <select name="year" class="form-control">
-                                                                    <?php
-                                                                    $i = 1;
-                                                                    while ($row_Y = mysqli_fetch_array($data["bill_statement_getYear"])) {
-                                                                        $i++;
-                                                                    ?>
-                                                                    <option value="<?php echo $row_Y["year"] ?>">
-                                                                        <?php echo $row_Y["year"]; ?>
-                                                                    </option>
-                                                                    <?php } ?>
-                                                                </select>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="col-lg-4">
-                                                            <div class="form-group">
-                                                                <label>Tình trang:</label>
-                                                                <select name="tinhtrang" class="form-control">
-                                                                    <option value="Đã đóng tiền">Đã đóng tiền
-                                                                    </option>
-                                                                    <option value="Chưa Thanh Toán"> Chưa Thanh Toán
-                                                                    </option>
-                                                                </select>
-                                                            </div>
-
-                                                        </div>
-
-                                                        <div class="col-lg-4">
-                                                            <div class="form-group float-right">
-
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-lg-4">
-                                                            <div class="form-group ">
-
-
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-lg-4">
-                                                            <div class="form-group float-right">
-                                                                <button type="submit" style="background-color: red;"
-                                                                    name="submit_search" class="btn btn-primary">Xác
-                                                                    nhận</button>
-                                                            </div>
-                                                        </div>
-
-                                                </form>
-                                                <hr>
-                                            </div>
-                                        </div>
 
                                     </div>
                                 </div>
                                 <hr>
                                 <div class="card-body">
-
                                     <div id="accordion" role="tablist">
                                         <?php
                                         // $i = 1;
@@ -145,8 +77,6 @@
                                                     </a>
 
                                                 </h5>
-
-
                                             </div>
                                             <div id="collapseTwo" class="collapse show" role="tabpanel"
                                                 aria-labelledby="headingOne" data-parent="#accordion">
@@ -164,22 +94,21 @@
                                                                     <th>Mã bill</th>
                                                                     <th>Mã học Học viên</th>
                                                                     <th>Tên Học viên</th>
-                                                                    <th>Mã Khóa Học</th>
-                                                                    <th>Tên Khóa Học</th>
-                                                                    <th>Ngày Lập Hóa Đơn</th>
+                                                                    <th>Số điện Thoại</th>
+                                                                    <th>gmail</th>
+                                                                    <th>Mã khóa học</th>
+                                                                    <th>Ngày lập hóa đơn</th>
                                                                     <th>Tổng tiền</th>
-                                                                    <th>Thời Hạn</th>
                                                                     <th>Tình Trạng Thanh Toán</th>
-                                                                    <th>Tháng </th>
-                                                                    <th>Năm </th>
                                                                     <th style="min-width:60px;">
                                                                         action</th>
                                                                 </tr>
                                                             </thead>
+
                                                             <tbody>
                                                                 <?php
                                                                 $i = 1;
-                                                                while ($row = mysqli_fetch_assoc($data["billMonthYear_statement"])) {
+                                                                while ($row = mysqli_fetch_assoc($data["st_bill_paid"])) {
                                                                 ?>
                                                                 <tr>
                                                                     <th><?php echo $row["id_bill"] ?>
@@ -188,9 +117,11 @@
                                                                     </td>
                                                                     <td> <?php echo $row["tenhv"]; ?>
                                                                     </td>
-                                                                    <td><?php echo $row["sourse_detail_id"]; ?>
+                                                                    <td><?php echo $row["sdt"]; ?>
                                                                     </td>
-                                                                    <td><?php echo $row["tenkhoahoc"]; ?>
+                                                                    <td><?php echo $row["gmail"]; ?>
+                                                                    </td>
+                                                                    <td><?php echo $row["ma_KH"]; ?>
                                                                     </td>
                                                                     <td><?php
                                                                             $fomat = strtotime($row["ngaylap_hd"]);
@@ -198,31 +129,16 @@
                                                                     </td>
                                                                     <td><?php echo  number_format($row["total"]); ?>
                                                                     </td>
-                                                                    <td> <?php echo $row["thoihan"]; ?></td>
 
-                                                                    <td style="color: blue;">
-                                                                        <?php if ($row["tinhtrang"] != 'Đã đóng tiền') {
-                                                                            ?>
-                                                                        <p style="color: red;">
-                                                                            <?php echo "Chưa Đóng Tiền"; ?>
-                                                                            <a href="Bill/allbill_edit/<?php echo $row1["id_bill"] ?>"
-                                                                                class="btn btn-primary btn-sm btn-block"><i
-                                                                                    class="far fa-edit"></i>
-                                                                                Thanh Toán</a>
-                                                                        </p>
-                                                                        <?php
-                                                                            } else {
-                                                                                echo $row["tinhtrang"];
-                                                                            } ?>
+                                                                    <td style="color:blue;">
+                                                                        <strong><?php echo $row["tinhtrang"]; ?>
+                                                                        </strong>
                                                                     </td>
-                                                                    <td><?php echo $row["month"]; ?>
-                                                                    </td>
-                                                                    <td><?php echo $row["year"]; ?>
-                                                                    </td>
+
 
                                                                     <!-- <td>
-                                                                <input type="submit" class="btn btn-primary" value="DS Học Viên">
-                                                             </td> -->
+                                                                    <input type="submit" class="btn btn-primary" value="DS Học Viên">
+                                                                </td> -->
                                                                     <td>
                                                                         <a href="Bill/allbill_view/<?php echo $row["id_bill"]; ?>"
                                                                             class="btn btn-primary btn-sm btn-block"><i
@@ -245,17 +161,15 @@
                                                             <!-- <ul id="output_search"></ul> -->
                                                             <thead>
                                                                 <tr>
-                                                                    <th>Mã Hóa Đơn</th>
-                                                                    <th>Mã Học viên</th>
-                                                                    <th>Tên Học Viên</th>
-                                                                    <th>Mã Khóa Học</th>
-                                                                    <th>Tên Khóa Học</th>
-                                                                    <th>Ngày Lập Hóa Đơn</th>
-                                                                    <th>Tổng Tiền</th>
-                                                                    <th>Thời Hạn</th>
+                                                                    <th>Mã bill</th>
+                                                                    <th>Mã học Học viên</th>
+                                                                    <th>Tên Học viên</th>
+                                                                    <th>Số điện Thoại</th>
+                                                                    <th>gmail</th>
+                                                                    <th>Mã khóa học</th>
+                                                                    <th>Ngày lập hóa đơn</th>
+                                                                    <th>Tổng tiền</th>
                                                                     <th>Tình Trạng Thanh Toán</th>
-                                                                    <th>Tháng </th>
-                                                                    <th>Năm </th>
                                                                     <th style="min-width:60px;">
                                                                         action</th>
                                                                 </tr>
@@ -264,7 +178,7 @@
                                                             <tbody>
                                                                 <?php
                                                                 $i = 1;
-                                                                while ($row = mysqli_fetch_assoc($data["billMonthYear_statement_showUnpaid"])) {
+                                                                while ($row = mysqli_fetch_assoc($data["st_for_bill_unpaid"])) {
                                                                 ?>
                                                                 <tr>
                                                                     <th><?php echo $row["id_bill"] ?>
@@ -273,9 +187,11 @@
                                                                     </td>
                                                                     <td> <?php echo $row["tenhv"]; ?>
                                                                     </td>
-                                                                    <td><?php echo $row["sourse_detail_id"]; ?>
+                                                                    <td><?php echo $row["sdt"]; ?>
                                                                     </td>
-                                                                    <td><?php echo $row["tenkhoahoc"]; ?>
+                                                                    <td><?php echo $row["gmail"]; ?>
+                                                                    </td>
+                                                                    <td><?php echo $row["ma_KH"]; ?>
                                                                     </td>
                                                                     <td><?php
                                                                             $fomat = strtotime($row["ngaylap_hd"]);
@@ -283,28 +199,26 @@
                                                                     </td>
                                                                     <td><?php echo number_format($row["total"]); ?>
                                                                     </td>
-                                                                    <td><?php echo $row["thoihan"]; ?>
-                                                                    </td>
-                                                                    <td style="color:red;">
-                                                                        <span> <i><?php echo $row["tinhtrang"]; ?></i>
-                                                                        </span>
-                                                                    </td>
-                                                                    <td><?php echo $row["month"]; ?>
-                                                                    </td>
-                                                                    <td><?php echo $row["year"]; ?>
+                                                                    <td style="color: red;">
+                                                                        <?php echo $row["tinhtrang"]; ?>
+                                                                        <?php echo number_format($row['price']) . ' vnđ'; ?>
                                                                     </td>
 
                                                                     <!-- <td>
                                                                             <input type="submit" class="btn btn-primary" value="DS Học Viên">
-                                                                        </td> -->
+                                                                     </td> -->
                                                                     <td>
-                                                                        <a href="Bill/allbill_view/<?php echo $row["id_bill"]; ?>"
+                                                                        <a href="Bill/allbill_edit/<?php echo $row["id_bill"] ?>"
                                                                             class="btn btn-primary btn-sm btn-block"><i
-                                                                                class="far fa-edit"></i>
-                                                                            Xem</a>
+                                                                                class="far fa-edit"></i>Thanh toán
                                                                         </a>
 
-
+                                                                        <a href="Bill/bill_delete/<?php echo $row["id_bill"] ?>"
+                                                                            class="btn 
+                                                                            btn-danger btn-sm btn-block mt-2"><i
+                                                                                class="fas fa-trash">
+                                                                            </i>
+                                                                            Delete </a>
                                                                     </td>
                                                                 </tr>
 
@@ -327,7 +241,41 @@
                                                         </table>
                                                     </div>
                                                     <!-- end table-responsive-->
+                                                    <?php $row_allsum = mysqli_fetch_assoc($data["st_bill_ALLsum_AD"]);
+                                                    if ($row_allsum == true) { ?>
 
+                                                    <p>Tổng Học Phí:
+                                                        <strong><?php echo number_format($row_allsum["STTong"]) . ' vnđ'; ?></strong>
+                                                    </p>
+                                                    <p>Tổng Học Phí Đã Đóng:
+                                                        <strong>
+                                                            <?php echo  number_format($row_allsum["Số tiền đã đóng"]) . ' vnđ'; ?></strong>
+                                                    </p>
+                                                    <?php } ?>
+                                                    <?php $row_sum_debt = mysqli_fetch_assoc($data["st_bill_sum_unpaid_AD"]);
+                                                    if ($row_sum_debt == true) { ?>
+                                                    <p>Tổng Học Phí Nợ:
+                                                        <span style="color: red ;">
+                                                            <?php echo number_format($row_sum_debt["SLno"]) . ' vnđ'; ?></span>
+
+                                                    </p>
+                                                    <form>
+                                                        <a class="btn btn-primary btn-sm btn-block"
+                                                            href="http://localhost/adminqledu/mvc/admin/controllers/exportExcelFile.php?idClass=<?php echo $row_sum_debt["id_class"] . '&tenLop=' . $row_sum_debt["malop"] ?>">Xuất
+                                                            file Excel
+                                                        </a>
+                                                    </form>
+                                                    <!-- <form action="" method="POST">
+                                                        <button class="btn btn-primary btn-sm btn-block"
+                                                            name="submit_Export" type="submit">Xuất file Excel</button>
+                                                    </form> -->
+                                                    <!-- <a href="exportExcelPHP/exportExcel/">ấn
+                                                        vào đây</a> -->
+                                                    <!-- <a
+                                                        href="http://localhost/adminqledu/mvc/admin/views/exportExcel.php">ấn
+                                                        vào đây</a> -->
+
+                                                    <?php } ?>
                                                 </div>
                                             </div>
 

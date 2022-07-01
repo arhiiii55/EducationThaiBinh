@@ -22,8 +22,7 @@ class usermodel extends DB
     public function gettk()
     {
 
-        $qr_user = " SELECT * 
-        FROM accountuser ac JOIN `role` r  
+        $qr_user = " SELECT * FROM accountuser ac JOIN `role` r  
          ON r.id_role = ac.role_id";
         return $rerult =  mysqli_query($this->conn, $qr_user);
     }
@@ -32,6 +31,7 @@ class usermodel extends DB
         $qrlogin = " SELECT * FROM accountuser WHERE `ten_taikhoan` = '$username' AND `mk_taikhoan` = '$password_input' ";
         return mysqli_query($this->conn, $qrlogin);
     }
+
     public function loginadmin($username)
     {
         $qrlogin = " SELECT * FROM accountuser WHERE `ten_taikhoan` = '$username' ";
@@ -117,5 +117,13 @@ class usermodel extends DB
         INNER JOIN role ON role.id_role = accountuser.role_id
         ";
         return mysqli_query($this->conn, $qr);
+    }
+    //--------------------------------------student page-----------------------
+    public function loginPageStudent($username, $password_input)
+    {
+        $qrlogin = "SELECT * FROM `accountgoogleapi` 
+        INNER JOIN students ON students.MaHV = accountgoogleapi.username
+        WHERE `username` = '$username' AND `password` = '$password_input' ";
+        return mysqli_query($this->conn, $qrlogin);
     }
 }

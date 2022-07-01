@@ -1,6 +1,7 @@
 <?php
 class classdetail extends Controllers
 {
+    #------------------------------------ giao dien admin (admin)--------------------------- 
     public function class_detail()
     {
         $qrdataClass = $this->model("classModel");
@@ -80,6 +81,7 @@ class classdetail extends Controllers
     }
     public function class_edit($id_class)
     {
+        $billModel = $this->model("billModel");
         $listdata = $this->model("liststudentModel");
         $qrdataClass = $this->model("classModel");
         $this->view("masterAdminLayout", [
@@ -89,6 +91,7 @@ class classdetail extends Controllers
             "class_all" => $qrdataClass->class_all(),
             "ShowAllOfCourse" => $listdata->ShowAllOfCourse(),
             "countStudentReal" => $qrdataClass->countStudentReal(),
+            "bill_stinclass" => $billModel->bill_stinclass($id_class),
         ]);
     }
     // Sửa 
@@ -121,6 +124,21 @@ class classdetail extends Controllers
             }
         }
     }
+    public function detailClass_Active($id_class)
+    {
+        $billModel = $this->model("billModel");
+        $listdata = $this->model("liststudentModel");
+        $qrdataClass = $this->model("classModel");
+        $this->view("masterAdminLayout", [
+            "pages" => "page/class_edit",
+            "editClass" => $qrdataClass->editClass($id_class),
+            "class_all_detail" => $qrdataClass->class_all_detail(),
+            "class_all" => $qrdataClass->class_all(),
+            "ShowAllOfCourse" => $listdata->ShowAllOfCourse(),
+            "countStudentReal" => $qrdataClass->countStudentReal(),
+            "bill_stinclass" => $billModel->bill_stinclass($id_class),
+        ]);
+    }
     #------------------------------------ giao dien nhanh vien ke toan (Accountant)--------------------------- 
     public function classPage_AC()
     {
@@ -136,6 +154,7 @@ class classdetail extends Controllers
     }
     public function class_edit_AC($id_class)
     {
+        $billModel = $this->model("billModel");
         $listdata = $this->model("liststudentModel");
         $qrdataClass = $this->model("classModel");
         $this->view("masterAccountantLayout", [
@@ -145,6 +164,7 @@ class classdetail extends Controllers
             "class_all" => $qrdataClass->class_all(),
             "ShowAllOfCourse" => $listdata->ShowAllOfCourse(),
             "countStudentReal" => $qrdataClass->countStudentReal(),
+            "bill_stinclass" => $billModel->bill_stinclass($id_class),
         ]);
     }
 }

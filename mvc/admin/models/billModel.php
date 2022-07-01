@@ -62,7 +62,9 @@ class billModel extends DB
     }
     public function bill_stinclass($id_class)
     {
-        $qrbill_st = "SELECT id_class,MaHV,tenhv,malop, ten_lop, ma_KH,tenkhoahoc,tinhtrang FROM soursedetail
+        $qrbill_st = "SELECT id_bill,MaHV,tenhv,sdt,gmail,soursedetail.ma_KH,tenkhoahoc,cahoc,lichhoc,giohoc,phong,bill.ngaylap_hd,total,tinhtrang
+         FROM soursedetail
+        INNER JOIN timeabledays ON timeabledays.id_days = soursedetail.day_id
         INNER JOIN class ON class.sourse_detail_id = soursedetail.id_sourse_detail
         INNER JOIN  bill ON bill.sourse_detail_id = soursedetail.id_sourse_detail
         INNER JOIN students ON students.id_students = bill.student_id

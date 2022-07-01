@@ -154,13 +154,11 @@
                                                     <!-- <th>button</th> -->
                                                 </tr>
                                             </thead>
-                                            <?php
-                                            $i = 1;
-                                            $row_num = mysqli_num_rows($data["studentView_action"]);
-                                            if ($row_num >= 1) {
-                                                while ($row = mysqli_fetch_assoc($data["studentView_action"])) {
-                                            ?>
                                             <tbody>
+                                                <?php
+                                                $i = 1;
+                                                while ($row = mysqli_fetch_assoc($data["studentView_action"])) {
+                                                ?>
                                                 <tr>
                                                     <td>
                                                         <?php echo $i++; ?>
@@ -170,29 +168,29 @@
                                                     </td>
                                                     <td> <?php echo $row["tenkhoahoc"]; ?> </td>
                                                     <td> <?php $fomat = strtotime($row["ngaylap_hd"]);
-                                                                    echo date('d/m/Y', $fomat); ?> </td>
+                                                                echo date('d/m/Y', $fomat); ?> </td>
                                                     <td> <?php echo $row["ten_lop"]; ?> </td>
                                                     <td> <?php echo $row["id_bill"]; ?> </td>
                                                     <td>
                                                         <?php $fomat = strtotime($row["ngaylap_hd"]);
-                                                                echo date('d/m/Y', $fomat); ?>
+                                                            echo date('d/m/Y', $fomat); ?>
                                                     </td>
                                                     <td> <?php echo $row["total"]; ?> </td>
                                                     <td> <?php echo $row["tinhtrang"]; ?> </td>
                                                     <td> <?php echo $row["trangthai"]; ?> </td>
-                                                </tr>
-                                            </tbody>
-                                            <?php
-                                                }
-                                            } else { ?>
-                                            <i>
-                                                <p style="color: red">Chưa có khóa học nào</p>
-                                            </i>
-                                            <?php
-                                            }
-                                            ?>
-                                        </table>
+                                                    <!-- <td> <a href="students/allstudent_delete/<?php echo $row["id_students"]; ?>"
+                                                            class="btn 
+                                                                 btn-danger btn-sm btn-block mt-2"><i
+                                                                class="fas fa-trash">
+                                                            </i>
+                                                            Delete </a></td> -->
 
+                                                </tr>
+                                                <?php }
+                                                ?>
+
+                                            </tbody>
+                                        </table>
                                     </div>
                                 </div>
 

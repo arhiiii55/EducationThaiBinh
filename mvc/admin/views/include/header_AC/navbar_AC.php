@@ -53,12 +53,13 @@
                         <span class="menu-arrow"></span>
                         <ul class="list-unstyled">
                             <a href="Bill/billPage">Thu Học Phí</a>
+                            <a href="Bill/viewAllClass_AC">Tình Trạng Học Phí</a>
                             <a href="Bill/bill_statement">Danh Sách Học Phí</a>
                         </ul>
                     </a>
                 </li>
                 <li class="submenu">
-                    <a href="reportStatement/reportView">
+                    <a href="reportStatement/reportView_AC">
                         <i class="fa-2x mr-2 fas fa-donate"></i>
                         <span> Quản Lý Biên Lai</span>
                     </a>

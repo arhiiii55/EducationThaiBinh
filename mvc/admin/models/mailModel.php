@@ -86,4 +86,28 @@ class mailModel extends DB
         $qrmail = "SELECT COUNT(id_mailbox) AS 'tong' FROM mailinstudent ";
         return $rerult =  mysqli_query($this->conn, $qrmail);
     }
+
+    public function sendStudent_staff()
+    {
+        $qrmail = "SELECT COUNT(id_mailbox) AS 'tong' FROM mailinstudent ";
+        return $rerult =  mysqli_query($this->conn, $qrmail);
+    }
+    //--------------------------------- student page ---------------------------------
+    public function getMail_notification($id, $mahv)
+    {
+        $qrmail = "SELECT * FROM notification
+        INNER JOIN students ON students.id_students = notification.student_id
+        INNER JOIN accountgoogleapi ON accountgoogleapi.username = students.MaHV
+        WHERE `id` = '$id' AND `username` = '$mahv'";
+        return $rerult =  mysqli_query($this->conn, $qrmail);
+    }
+    public function insert_notification($id_account, $id_student, $tieude, $noidung, $ngaygui, $loaithongbao)
+    {
+        $qrcreate = "INSERT INTO `notification`(`account_id`, `student_id`, `tieude`, `noidung`, `ngaygui`, `loaithongbao`) 
+        VALUES ('$id_account','$id_student','$tieude','$noidung','$ngaygui','$loaithongbao')";
+        if ($result = mysqli_query($this->conn, $qrcreate)) {
+            $result = true;
+        }
+        return  json_encode($result);
+    }
 }

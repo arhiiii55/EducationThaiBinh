@@ -203,22 +203,16 @@
                                                                         <?php echo $row["tinhtrang"]; ?>
                                                                         <?php echo number_format($row['price']) . ' vnđ'; ?>
                                                                     </td>
-
-                                                                    <!-- <td>
-                                                                            <input type="submit" class="btn btn-primary" value="DS Học Viên">
-                                                                     </td> -->
                                                                     <td>
-                                                                        <a href="Bill/allbill_edit/<?php echo $row["id_bill"] ?>"
+                                                                        <a href="Bill/allbill_view/<?php echo $row["id_bill"]; ?>"
                                                                             class="btn btn-primary btn-sm btn-block"><i
-                                                                                class="far fa-edit"></i>Thanh toán
-                                                                        </a>
+                                                                                class="far fa-edit"></i>
+                                                                            Xem</a>
+                                                                        <!-- <input type="submit" class="btn btn-primary"
+                                                                            value="DS Học Viên"> -->
+                                                                    </td>
+                                                                    <td>
 
-                                                                        <a href="Bill/bill_delete/<?php echo $row["id_bill"] ?>"
-                                                                            class="btn 
-                                                                            btn-danger btn-sm btn-block mt-2"><i
-                                                                                class="fas fa-trash">
-                                                                            </i>
-                                                                            Delete </a>
                                                                     </td>
                                                                 </tr>
 
@@ -259,12 +253,21 @@
                                                             <?php echo number_format($row_sum_debt["SLno"]) . ' vnđ'; ?></span>
 
                                                     </p>
-                                                    <form
-                                                        action="exportExcel/getExcelPHP/<?php echo $row_sum_debt["id_class"] . '/' . $row_sum_debt["malop"] ?>"
-                                                        method="POST">
+                                                    <form>
+                                                        <a class="btn btn-primary btn-sm btn-block"
+                                                            href="http://localhost/adminqledu/mvc/admin/controllers/exportExcelFile.php?idClass=<?php echo $row_sum_debt["id_class"] . '&tenLop=' . $row_sum_debt["malop"] ?>">Xuất
+                                                            file Excel
+                                                        </a>
+                                                    </form>
+                                                    <!-- <form action="" method="POST">
                                                         <button class="btn btn-primary btn-sm btn-block"
                                                             name="submit_Export" type="submit">Xuất file Excel</button>
-                                                    </form>
+                                                    </form> -->
+                                                    <!-- <a href="exportExcelPHP/exportExcel/">ấn
+                                                        vào đây</a> -->
+                                                    <!-- <a
+                                                        href="http://localhost/adminqledu/mvc/admin/views/exportExcel.php">ấn
+                                                        vào đây</a> -->
 
                                                     <?php } ?>
                                                 </div>

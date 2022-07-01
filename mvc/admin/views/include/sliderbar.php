@@ -20,6 +20,13 @@
                     </a>
                 </li>
                 <li class="submenu">
+                    <span class="menu-arrow"></span>
+                    <ul class="list-unstyled">
+                        <a href="students/studentPage_AD/">Đăng ký
+                            Học Viên</a>
+                        <a href="students/allstudentPage_AD/">Danh
+                            Sách Học Viên</a>
+                    </ul>
                     <a href="Home/mailboxPage">
                         <span class="label radius-circle bg-danger float-right">18</span>
                         <i class="fas fa-envelope"></i>
@@ -85,8 +92,8 @@
                         <span> Lập Hóa Đơn</span>
                         <span class="menu-arrow"></span>
                         <ul class="list-unstyled">
-                            <a href="Bill/billPage_AD">Thu Học Phí</a>
-                            <a href="Bill/bill_statement">Danh Sách Học Phí</a>
+                            <a href="Bill/billPage_AD">Tình Trạng Học Phí</a>
+                            <a href="Bill/bill_statement_AD">Danh Sách Học Phí</a>
                         </ul>
                     </a>
                 </li>

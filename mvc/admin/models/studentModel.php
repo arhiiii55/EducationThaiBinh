@@ -136,4 +136,12 @@ class studentModel extends DB
         WHERE `id_students` = '$id'";
         return $result =  mysqli_query($this->conn, $qrview);
     }
+    // tình trạng đóng học phí Trang HV
+    public function payTuition_status($id)
+    {
+        $qrview = " SELECT * FROM students
+        LEFT JOIN bill ON bill.student_id = students.id_students
+        WHERE `id_students` = '$id'";
+        return $result =  mysqli_query($this->conn, $qrview);
+    }
 }

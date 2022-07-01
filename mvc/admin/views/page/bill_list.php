@@ -158,8 +158,8 @@
                                                                         <th>Ngày lập hóa đơn</th>
                                                                         <th>Tổng tiền</th>
                                                                         <th>Tình Trạng Thanh Toán</th>
-                                                                        <th style="min-width:60px;">
-                                                                            action</th>
+                                                                        <!-- <th style="min-width:60px;">
+                                                                            action</th> -->
                                                                     </tr>
                                                                 </thead>
 
@@ -191,21 +191,7 @@
                                                                             <?php echo $row["tinhtrang"]; ?>
                                                                         </td>
 
-                                                                        <!-- <td>
-                                                                            <input type="submit" class="btn btn-primary" value="DS Học Viên">
-                                                                     </td> -->
-                                                                        <td>
-                                                                            <a href="Bill/allbill_edit/<?php echo $row["id_bill"] ?>"
-                                                                                class="btn btn-primary btn-sm btn-block"><i
-                                                                                    class="far fa-edit"></i>Thanh toán
-                                                                            </a>
 
-                                                                            <a href="Bill/bill_delete/<?php echo $row["id_bill"] ?>"
-                                                                                class="btn 
-                                                             btn-danger btn-sm btn-block mt-2"><i class="fas fa-trash">
-                                                                                </i>
-                                                                                Delete </a>
-                                                                        </td>
                                                                     </tr>
 
                                                                 </tbody>

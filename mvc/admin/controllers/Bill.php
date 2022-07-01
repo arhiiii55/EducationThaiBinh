@@ -2,6 +2,31 @@
 class bill extends Controllers
 {
     //----------------------Bill page for admin--------------
+    public function bill_statement_AD()
+    {
+        //data model 
+        $qrbill = $this->model("billModel");
+        $qrsourse = $this->model("courseModel");
+        $qrstudent = $this->model("studentModel");
+        // output view
+        $month = isset($_POST['month']) ? $_POST['month'] : null;
+        $year  = isset($_POST['year']) ? $_POST['year'] : null;
+        $tinhtrang  = isset($_POST['tinhtrang']) ? $_POST['tinhtrang'] : null;
+        $this->view("masterAdminLayout", [
+            "pages" => "page/bill_statement",
+            "st_bill_paid" => $qrbill->st_bill_paid(),
+            "bill_all" => $qrbill->bill_all(),
+            "show_bill_full" => $qrbill->st_bill_sale_sourse(),
+            "showstudent" => $qrstudent->showstudent(),
+            "ShowCourseDetail" => $qrsourse->ShowCourseDetail(),
+            "courseDetail" => $qrsourse->courseDetail(),
+            "bill_statement_getYear" => $qrbill->bill_statement_getYear(),
+            "billMonthYear_statement" => $qrbill->billMonthYear_statement($month, $year, $tinhtrang),
+            // "billMonthYear_statement" => $qrbill->billMonthYear_statement($month, $year, $tinhtrang),
+            "billMonthYear_statement_showpaid" => $qrbill->billMonthYear_statement_showPaid(),
+            "billMonthYear_statement_showUnpaid" => $qrbill->billMonthYear_statement_showUnPaid(),
+        ]);
+    }
     public function billPage_AD()
     {
         $qrsourse = $this->model("courseModel");
@@ -25,13 +50,14 @@ class bill extends Controllers
             "courseDetail" => $qrsourse->courseDetail(),
             "groupBy_class_AD_AC_tal" => $qrbill->groupBy_class_AD_AC(),
             "groupBy_class_AD_AC" => $qrbill->groupBy_class_AD_AC(),
-            
+
         ]);
     }
     public function bill_classActive($id_class)
-    {
+    { // $read = new exportExcel()
         $qrbill = $this->model("billModel");
         $qrsourse = $this->model("courseModel");
+        // $read ->getExcelPHP();
         $this->view("masterAdminLayout", [
             "pages" => "page/bill_classActive",
             "st_bill_paid" => $qrbill->st_bill_paid_AD($id_class),
@@ -39,7 +65,7 @@ class bill extends Controllers
             "ShowCourseDetail" => $qrsourse->ShowCourseDetail(),
             "courseDetail" => $qrsourse->courseDetail(),
             "bill_statement_getYear" => $qrbill->bill_statement_getYear(),
-            "bill_stinclass_test" => $qrbill ->bill_stinclass_test(),
+            "bill_stinclass_test" => $qrbill->bill_stinclass_test(),
             "billMonthYear_statement_showpaid" => $qrbill->billMonthYear_statement_showPaid(),
             "billMonthYear_statement_showUnpaid" => $qrbill->billMonthYear_statement_showUnPaid(),
             "ShowCourseDetail_1" => $qrsourse->ShowCourseDetail(),
@@ -68,6 +94,52 @@ class bill extends Controllers
     // }
 
     //---------------------- Bill page for accountant-------------
+    public function viewAllClass_AC()
+    {
+        $qrsourse = $this->model("courseModel");
+        $qrstudent = $this->model("studentModel");
+        $qrbill = $this->model("billModel");
+        $showclass = $qrbill->getclass_id();
+        while ($data_class = mysqli_fetch_assoc($showclass)) {
+            $id_class = $data_class["id_class"];
+        }
+        $this->view("masterAccountantLayout", [
+            "pageaccountant" => "pageAccountant/bill_viewALL",
+            "bill_all" => $qrbill->bill_all(),
+            "st_for_bill_paid" => $qrbill->st_bill_paid(),
+            "st_for_bill_unpaid" => $qrbill->st_bill_unpaid(),
+            // "insert_bill" => $qrbill->insert_bill($id_student, $id_sourse, $ngay, $total, $tinhtrang),
+            "bill_stinclass" => $qrbill->bill_stinclass($id_class),
+            "show_bill_full" => $qrbill->st_bill_sale_sourse(),
+            "showstudent" => $qrstudent->showstudent(),
+            "ShowCourseDetail" => $qrsourse->ShowCourseDetail(),
+            "ShowCourseDetail_1" => $qrsourse->ShowCourseDetail(),
+            "courseDetail" => $qrsourse->courseDetail(),
+            "groupBy_class_AD_AC_tal" => $qrbill->groupBy_class_AD_AC(),
+            "groupBy_class_AD_AC" => $qrbill->groupBy_class_AD_AC(),
+        ]);
+    }
+    public function bill_classActive_AC($id_class)
+    { // $read = new exportExcel()
+        $qrbill = $this->model("billModel");
+        $qrsourse = $this->model("courseModel");
+        // $read ->getExcelPHP();
+        $this->view("masterAccountantLayout", [
+            "pageaccountant" => "pageAccountant/bill_classActive",
+            "st_bill_paid" => $qrbill->st_bill_paid_AD($id_class),
+            "st_for_bill_unpaid" => $qrbill->st_bill_unpaid_AD($id_class),
+            "ShowCourseDetail" => $qrsourse->ShowCourseDetail(),
+            "courseDetail" => $qrsourse->courseDetail(),
+            "bill_statement_getYear" => $qrbill->bill_statement_getYear(),
+            "bill_stinclass_test" => $qrbill->bill_stinclass_test(),
+            "billMonthYear_statement_showpaid" => $qrbill->billMonthYear_statement_showPaid(),
+            "billMonthYear_statement_showUnpaid" => $qrbill->billMonthYear_statement_showUnPaid(),
+            "ShowCourseDetail_1" => $qrsourse->ShowCourseDetail(),
+            "bill_stinclass_groupBy" => $qrbill->bill_stinclass_groupBy($id_class),
+            "st_bill_ALLsum_AD"  => $qrbill->st_bill_ALLsum_AD($id_class),
+            "st_bill_sum_unpaid_AD"  => $qrbill->st_bill_sum_unpaid_AD($id_class),
+        ]);
+    }
     public function billPage()
     {
         $qrsourse = $this->model("courseModel");
@@ -317,7 +389,7 @@ class bill extends Controllers
         $result_mess = false;
         $qrbill = $this->model("billModel");
         $qrsourse = $this->model("courseModel");
-        $qrstudent = $this->model("studentModel");
+        // $qrstudent = $this->model("studentModel");
         if (isset($_POST['edit_bill'])) {
             if (empty($_POST["ngay"] && $_POST["total"] && $_POST["tinhtrang"])) {
                 $this->view("masterAccountantLayout", [
