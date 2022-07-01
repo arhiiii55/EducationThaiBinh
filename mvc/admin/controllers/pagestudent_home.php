@@ -25,7 +25,7 @@ class pagestudent_home extends Controllers
     public function loginStudentPage()
     {
         $result_mess = false;
-        $this->view("pageStudent/login", [
+        $this->view("clientLogin", [
             "result" => $result_mess
         ]);
     }
@@ -37,7 +37,7 @@ class pagestudent_home extends Controllers
             $username = $_POST["ten_dangnhap"];
             $password_input = $_POST["mk_taikhoan"];
             if (empty($_POST["ten_dangnhap"]) || empty($_POST["mk_taikhoan"])) {
-                $this->view("pageStudent/login", [
+                $this->view("clientLogin", [
                     "result" => $result_mess
                 ]);
             }
