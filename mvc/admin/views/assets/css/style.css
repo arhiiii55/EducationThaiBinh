@@ -1804,7 +1804,7 @@ a {
   color: inherit;
   cursor: pointer;
 }
-
+  
 .btn-blue {
   background-color: #6c73c9;
   width: 150px;
@@ -1864,3 +1864,4 @@ a {
   justify-content: space-between;
   align-items: center;
 }
+

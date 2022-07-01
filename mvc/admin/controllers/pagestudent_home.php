@@ -85,17 +85,19 @@ class pagestudent_home extends Controllers
         // echo $mahv;
         $this->view("masterStudentLayout", [
             "pagestudent" => "pageStudent/notification_all",
-            "getmail"=>$mailModel->getMail_notification($id)
+            "getmail" => $mailModel->getMail_notification($id)
         ]);
     }
 
     public function account_Page($id)
     {
         $studentModel = $this->model("studentModel");
+        // $mailModel = $this->model("mailModel");
         // echo $mahv;
         $this->view("masterStudentLayout", [
-            "pagestudent" => "pageStudent/notification_all",
-            "getmail"=>$mailModel->getMail_notification($id)
+            "pagestudent" => "pageStudent/allstudent_edit",
+            "getInfoStudent" => $studentModel->getInfoStudent($id),
+            "studentView_action" => $studentModel->studentView_action($id)
         ]);
     }
 }

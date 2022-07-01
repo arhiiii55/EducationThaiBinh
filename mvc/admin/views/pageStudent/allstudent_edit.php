@@ -23,7 +23,7 @@
                         <div class="card-body">
                             <?php
                             $i = 1;
-                            while ($row = mysqli_fetch_assoc($data["editStudent"])) {
+                            while ($row = mysqli_fetch_assoc($data["getInfoStudent"])) {
                                 $i++;
                             ?>
                             <form action="students/allstudent_update/<?php echo $row["id_students"] ?>" method="POST">
@@ -39,10 +39,10 @@
                                         </div>
                                         <div class="form-group">
                                             <!-- id="filer_example2" multiple="multiple" -->
-                                            <input type="file" value="mvc\photo\<?php echo $row["imgHV"]; ?>"
+                                            <!-- <input type="file" value="mvc\photo\"
                                                 name="hinhanh" style="border: 1px solid black" id="abc">
 
-                                            </input>
+                                            </input> -->
                                         </div>
                                     </div>
                                     <div class="form-group col-xl-5 col-md-6 col-sm-12">
@@ -95,14 +95,6 @@
                                             <input type="text" value="<?php echo $row["gmail"]; ?>"
                                                 title="vd: abc@abc.com" placeholder="Nhập gmail của bạn"
                                                 class="form-control" name="gmail">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>active</label>
-                                            <select name="actived" class="form-control" required>
-                                                <!-- <input type="text" class="form-control" name="actived"> -->
-                                                <option value="1">Hoạt động</option>
-                                                <option value="0">Ngừng</option>
-                                            </select>
                                         </div>
                                     </div>
                                 </div>

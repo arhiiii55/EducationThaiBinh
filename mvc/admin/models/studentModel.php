@@ -148,7 +148,8 @@ class studentModel extends DB
     //--------------------------------- student page ---------------------------------
     public function getInfoStudent($id)
     {
-        $qrstudent = "SELECT * FROM  `students` INNER JOIN accountgoogleapi ON accountgoogleapi.username = students.MaHV
+        $qrstudent = "SELECT * FROM  `students` 
+        INNER JOIN accountgoogleapi ON accountgoogleapi.username = students.MaHV
         WHERE `id` =  '$id' ";
         return mysqli_query($this->conn, $qrstudent);
     }

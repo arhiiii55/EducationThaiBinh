@@ -1,6 +1,6 @@
  <?php
     if (!$_SESSION["id_account"]) {
-        header("location:http://localhost/adminqledu/websiteEdu/mainPage");
+        header("location:http://localhost/adminqledu/websiteEdu/mainPage_GT");
     }
     ?>
  <!DOCTYPE html>

@@ -33,13 +33,6 @@
                     </a>
                 </li>
                 <li class="submenu">
-                    <a href="pagestudent_home/register_course">
-                        <i class="fa-2x mr-2 fas fa-user-graduate"></i>
-                        <span>Đăng ký khóa học</span>
-
-                    </a>
-                </li>
-                <li class="submenu">
                     <a href="">
                         <i class="fa-2x mr-2 fas fa-user-tie"></i>
                         <span>Thông Tin Lịch Học </span>

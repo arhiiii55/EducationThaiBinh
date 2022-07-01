@@ -51,12 +51,13 @@
     <header id="header" class="fixed-top">
         <div class="container d-flex align-items-center justify-content-between">
             <div>
-             <a href="websiteEdu/mainPage"><img src="http://localhost/adminqledu/mvc/websiteEdu/assets/img/thaibinhlogo.png"
-                    alt="academyhcm"></img></a>
+                <a href="websiteEdu/mainPage"><img
+                        src="http://localhost/adminqledu/mvc/websiteEdu/assets/img/thaibinhlogo.png"
+                        alt="academyhcm"></img></a>
                 <a href="websiteEdu/mainPage"><span class="logan"> Thai Binh Sports</span></a>
             </div>
 
-            <nav id="navbar"  class="navbar order-last order-lg-0">
+            <nav id="navbar" class="navbar order-last order-lg-0">
                 <ul>
                     <li><a class="active" href="websiteEdu/mainPage">Trang chủ</a></li>
                     <li><a href="websiteEdu/aboutPage">Giới thiệu</a></li>
@@ -67,9 +68,16 @@
                 <!-- <i class="bi bi-list mobile-nav-toggle"></i> -->
             </nav>
 
-            <div>
-            <a href="websiteEdu/contactPage" class="get-started-btn">Đăng ký</a>
-            <a href="Home/loginPage" class="dangnhap ">Đăng nhập</a>
+            <div style="display:flex;">
+                <a href="websiteEdu/contactPage" class="get-started-btn">Đăng ký</a>
+                <div class="dropdown">
+                    <a href="#" class="dropbtn dangnhap"> Đăng nhập</a>
+                    <div class="dropdown-content">
+                        <a href="Home/loginPage">Tài khoản nội bộ</a>
+                        <a href="pagestudent_home/loginStudentPage">Học viên</a>
+                    </div>
+                </div>
+                <!-- <a href="Home/loginPage" class="dangnhap ">Đăng nhập</a> -->
             </div>
         </div>
     </header>
